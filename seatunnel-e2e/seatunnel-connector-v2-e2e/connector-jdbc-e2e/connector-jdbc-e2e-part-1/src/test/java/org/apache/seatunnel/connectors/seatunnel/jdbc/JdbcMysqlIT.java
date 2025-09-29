@@ -81,7 +81,7 @@ import java.util.Properties;
 public class JdbcMysqlIT extends AbstractJdbcIT {
 
     private static final String MYSQL_IMAGE = "mysql:8.0";
-    private static final String MYSQL_CONTAINER_HOST = "mysql-e2e-1";
+    private static final String MYSQL_CONTAINER_HOST = "mysql-e2e";
     private static final String MYSQL_DATABASE = "seatunnel";
     private static final String MYSQL_SOURCE = "source";
     private static final String MYSQL_SINK = "sink";
