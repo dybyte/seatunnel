@@ -55,7 +55,7 @@ public class JdbcMySqlSaveModeCatalogIT extends TestSuiteBase implements TestRes
             "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.32/mysql-connector-j-8.0.32.jar";
 
     private static final String MYSQL_IMAGE = "mysql:8.0";
-    private static final String MYSQL_CONTAINER_HOST = "mysql-e2e";
+    private static final String MYSQL_CONTAINER_HOST = "mysql-e2e-5";
     private static final String MYSQL_DATABASE = "auto";
 
     private static final String MYSQL_USERNAME = "root";
