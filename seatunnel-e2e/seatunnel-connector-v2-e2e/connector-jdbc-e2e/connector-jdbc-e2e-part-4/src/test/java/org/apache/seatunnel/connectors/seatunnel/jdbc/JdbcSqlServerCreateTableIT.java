@@ -37,6 +37,7 @@ import org.apache.seatunnel.e2e.common.junit.TestContainerExtension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.testcontainers.containers.Container;
 import org.testcontainers.containers.MSSQLServerContainer;
 import org.testcontainers.containers.MySQLContainer;
@@ -56,6 +57,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.stream.Stream;
 
+@ResourceLock("MYSQL_LOCK_1")
 @Slf4j
 @DisabledOnContainer(
         value = {},
