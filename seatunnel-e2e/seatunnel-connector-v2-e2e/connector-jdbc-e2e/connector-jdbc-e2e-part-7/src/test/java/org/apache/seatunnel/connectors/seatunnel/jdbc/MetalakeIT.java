@@ -30,6 +30,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.testcontainers.DockerClientFactory;
 import org.testcontainers.containers.Container;
 import org.testcontainers.containers.GenericContainer;
@@ -65,6 +66,7 @@ import java.util.stream.Stream;
 import static org.apache.seatunnel.e2e.common.util.ContainerUtil.PROJECT_ROOT_PATH;
 import static org.awaitility.Awaitility.given;
 
+@ResourceLock("MYSQL_LOCK_1")
 public class MetalakeIT extends SeaTunnelContainer {
 
     protected GenericContainer<?> dbServer;
