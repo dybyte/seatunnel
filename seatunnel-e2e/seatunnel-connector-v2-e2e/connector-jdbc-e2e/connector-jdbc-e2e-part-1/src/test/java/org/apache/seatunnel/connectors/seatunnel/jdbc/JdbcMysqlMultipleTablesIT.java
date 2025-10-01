@@ -32,7 +32,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.function.Executable;
-import org.junit.jupiter.api.parallel.ResourceLock;
 import org.testcontainers.containers.Container;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
@@ -61,7 +60,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@ResourceLock("MYSQL_LOCK_1")
 @Slf4j
 public class JdbcMysqlMultipleTablesIT extends TestSuiteBase implements TestResource {
     private static final String MYSQL_IMAGE = "mysql:8.0";

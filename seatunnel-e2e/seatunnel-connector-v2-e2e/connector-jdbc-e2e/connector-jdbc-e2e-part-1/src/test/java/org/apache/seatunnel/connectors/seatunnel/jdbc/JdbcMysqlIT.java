@@ -52,7 +52,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.ResourceLock;
 import org.testcontainers.containers.Container;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.MySQLContainer;
@@ -79,7 +78,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-@ResourceLock("MYSQL_LOCK_1")
 public class JdbcMysqlIT extends AbstractJdbcIT {
 
     private static final String MYSQL_IMAGE = "mysql:8.0";

@@ -42,7 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.ResourceLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.MySQLContainer;
@@ -73,7 +72,6 @@ import java.util.stream.Stream;
 
 import static org.awaitility.Awaitility.given;
 
-@ResourceLock("MYSQL_LOCK_1")
 public class JdbcMysqlSplitIT extends TestSuiteBase implements TestResource {
     private static final Logger LOG = LoggerFactory.getLogger(JdbcMysqlSplitIT.class);
 
@@ -552,7 +550,7 @@ public class JdbcMysqlSplitIT extends TestSuiteBase implements TestResource {
     public void tearDown() throws Exception {
         if (mysql_container != null) {
             mysql_container.close();
-            dockerClient.removeContainerCmd(mysql_container.getContainerId()).exec();
+            //            dockerClient.removeContainerCmd(mysql_container.getContainerId()).exec();
         }
     }
 

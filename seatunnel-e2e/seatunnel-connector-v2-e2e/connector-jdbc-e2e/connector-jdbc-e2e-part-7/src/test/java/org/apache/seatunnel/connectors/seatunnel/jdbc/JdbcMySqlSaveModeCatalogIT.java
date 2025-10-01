@@ -32,7 +32,6 @@ import org.apache.seatunnel.e2e.common.junit.TestContainerExtension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.ResourceLock;
 import org.testcontainers.containers.Container;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
@@ -49,7 +48,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.stream.Stream;
 
-@ResourceLock("MYSQL_LOCK_1")
 @Slf4j
 public class JdbcMySqlSaveModeCatalogIT extends TestSuiteBase implements TestResource {
 
@@ -197,7 +195,7 @@ public class JdbcMySqlSaveModeCatalogIT extends TestSuiteBase implements TestRes
     public void tearDown() throws Exception {
         if (mysql_container != null) {
             mysql_container.close();
-            dockerClient.removeContainerCmd(mysql_container.getContainerId()).exec();
+            //            dockerClient.removeContainerCmd(mysql_container.getContainerId()).exec();
         }
     }
 
