@@ -396,7 +396,7 @@ jobs:
           cache: 'maven'
       - name: run all modules unit test
         run: |
-          ./mvnw -B -T 1 clean verify -DskipUT=false -DskipIT=true -D"license.skipAddThirdParty"=true -D"skip.ui"=true --no-snapshot-updates
+          ./mvnw -B -T 1 verify -DskipUT=false -DskipIT=true -D"license.skipAddThirdParty"=true -D"skip.ui"=true --no-snapshot-updates
         env:
           MAVEN_OPTS: -Xmx4096m
 
